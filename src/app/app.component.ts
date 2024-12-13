@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
-import {NgIfComponent} from './components/ng-if/ng-if.component';
-import {NgForComponent} from './components/ng-for/ng-for.component';
-import {NgClassComponent} from './components/ng-class/ng-class.component';
+import {Component} from '@angular/core';
+import {RouterLink, RouterOutlet} from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
-  imports: [NgIfComponent,NgForComponent,NgClassComponent],
+  imports: [RouterLink,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

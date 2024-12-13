@@ -1,0 +1,54 @@
+<h5>Control Statement</h5>
+
+<div class="row">
+  @if (div1Visiable == true) {
+    <div class="col-3 bg-success p-3 mx-3">
+      Div1
+    </div>
+  }
+
+
+  <div class="col-3 bg-primary">
+    Div2
+  </div>
+  <div class="col-3">
+    @if (isChecked == true) {
+      <div class="bg-primary">
+        Checkbox is Checked
+      </div>
+    } @else {
+      <div class="bg-danger">
+        Checkbox is UnChecked
+      </div>
+    }
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-3">
+    <button class="btn btn-success m-3" (click)="hideShowDiv1(true)">Show</button>
+    <button class="btn btn-danger" (click)="hideShowDiv1(false)">Hide</button>
+  </div>
+  <div class="col-3">
+    <input type="checkbox" [(ngModel)]="isChecked">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <select>
+      @for (item of cityList; track $index) {
+        <option>{{ item }}</option>
+      }
+    </select>
+  </div>
+  <div class="col-3">
+      @for(city of cityList;track $index){
+        <button class="btn btn-dark">{{city}}</button>
+      }
+  </div>
+</div>
+
+

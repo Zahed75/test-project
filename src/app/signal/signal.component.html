@@ -1,0 +1,15 @@
+
+<h6>Signal Page</h6>
+ <p>{{firstName()}}</p>
+
+<input type="text" [value]="firstName()">
+
+<button class="btn btn-success">Change The Course Name</button>
+
+<p>{{courseName}}</p>
+
+
+<p>{{rollNo()}}</p>
+<button class="btn btn-danger" (click)="onIncrement()">Increment</button>
+
+<button routerLink="/control-flow" class="btn btn-dark">Control</button>
