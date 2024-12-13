@@ -6,6 +6,7 @@ import { ControlStatementComponent } from './control-statement/control-statement
 import {SignalComponent} from './signal/signal.component';
 import {TemplateFormComponent} from './template-form/template-form.component';
 import {GetApiComponent} from './components/API/get-api/get-api.component';
+import { PostApiComponent } from './components/API/post-api/post-api.component';
 
 export const routes: Routes = [
   {
@@ -40,6 +41,10 @@ export const routes: Routes = [
   {
     path:'get-api',
     component: GetApiComponent
+  },
+  {
+    'path':'Post',
+    component: PostApiComponent
   },
   {
     path: '**',
