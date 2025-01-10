@@ -1,0 +1,61 @@
+<div class="container">
+  <p>template-form works!</p>
+
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label >Email</label>
+        <input type="email" #usersEmail="ngModel" required [(ngModel)]="userObj.email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
+        <div class="text-danger">
+          @if(usersEmail.errors?.['required'] && usersEmail.touched && usersEmail.dirty){
+            <span>This is Required</span>
+          }
+
+        </div>
+      </div>
+      <div  class="form-group col-md-6">
+        <label>Password</label>
+          <input #usersPassword="ngModel"  required maxlength="8" [maxLength]="8" type="password" [(ngModel)]="userObj.password"  name="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <span *ngIf="usersPassword.errors?.['required'] && usersPassword.touched" >This is Required</span>
+        <span *ngIf="usersPassword.errors?.['pattern'] && usersPassword.touched">Min char 4 is required</span>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label >Address</label>
+      <input type="text" [(ngModel)]="userObj.address" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+      <label>Address 2</label>
+      <input type="text" [(ngModel)]="userObj.address2" name="address2" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>City</label>
+        <input type="text" [(ngModel)]="userObj.city" name="city" class="form-control" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label  >State</label>
+        <select [(ngModel)]="userObj.state" name="state" id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>Dhaka</option>
+          <option>Islamabad</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label >Zip</label>
+        <input [(ngModel)]="userObj.zip" name="zip" type="text" class="form-control" id="inputZip">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" [(ngModel)]="userObj.isTerms" name="isTerms" type="checkbox" id="gridCheck">
+        <label class="form-check-label">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <button type="button" (click)="onSave()" class="btn btn-primary">Sign in</button>
+  </form>
+
+</div>

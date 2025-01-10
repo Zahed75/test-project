@@ -1,0 +1,60 @@
+<h2>Data-Bindings-Page</h2>
+
+<div class="row">
+  <div class="col-6">
+
+    <p>Interpolation</p>
+
+    <p>FirstName = {{ firstName }}</p>
+    <p>Date = {{ currentDate }}</p>
+    <div>{{ rollNo }}</div>
+  </div>
+  <span>{{ isActive }}</span>
+  <div class="col-6">
+    <input type="text" [value]="firstName" name="" id="name">
+    <br>
+    <input type="text" [value]="myPlaceholder" name="" id="">
+  </div>
+  <br>
+
+</div>
+
+<div [class]="division" style="width: 100px; height: 100px;">
+  <p>Hello</p>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-3">
+    <button class="btn btn-success" (click)="showWelcomeMessage()">Check</button>
+  </div>
+
+  <div class="col-3">
+    <select (change)="onCityChange()">
+      <option value="Dhaka">Dhaka</option>
+      <option value="Dhaka">New York</option>
+      <option value="Dhaka">Islamabad</option>
+      <option value="Dhaka">Bangkok</option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <input type="text" [(ngModel)]="firstName">
+    <div class="col-3">
+      <select [(ngModel)]="selectedCity">
+        <option value="Dhaka">Dhaka</option>
+        <option value="Dhaka">New York</option>
+        <option value="Dhaka">Islamabad</option>
+        <option value="Dhaka">Bangkok</option>
+      </select>
+      -{{ selectedCity }}
+    </div>
+  </div>
+</div>
+
+
+
+
